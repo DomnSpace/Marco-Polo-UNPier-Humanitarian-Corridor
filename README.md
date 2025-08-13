@@ -69,7 +69,7 @@ The document is designed for:
 
 ## Viewing the Document
 
-Open `Marco Polo UN Pier.html` in any modern web browser to view the complete document with enhanced diagrams and interactive elements.
+Open `Marco Polo UN Pier.html` in any modern web browser to view the complete document with enhanced diagrams and interactive elements. Also hosted at https://domnspace.github.io/Marco-Polo-UNPier-Humanitarian-Corridor
 
 ---
 
