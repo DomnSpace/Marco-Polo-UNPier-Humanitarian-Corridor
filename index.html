@@ -6,280 +6,446 @@
     <title>Marco Polo UN Pier - Humanitarian Corridor Documentation</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Times New Roman', serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            background: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: #003366;
             color: white;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 20px 0;
+            border-bottom: 4px solid #0066cc;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .logo-section {
-            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .un-logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #003366;
+            font-size: 14px;
         }
 
         .main-title {
-            font-size: 3em;
-            font-weight: 700;
-            background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            font-size: 2.2em;
+            font-weight: 400;
+            margin: 0;
+            letter-spacing: 0.5px;
         }
 
         .subtitle {
-            font-size: 1.3em;
-            color: #cbd5e1;
-            margin-bottom: 40px;
-            line-height: 1.5;
+            font-size: 1.1em;
+            margin: 5px 0 0 0;
+            opacity: 0.9;
+            font-weight: 300;
         }
 
-        .document-access {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 16px;
-            padding: 40px;
+        .institutional-note {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .main-content {
+            background: white;
             margin: 40px 0;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .access-title {
-            font-size: 1.5em;
-            color: #38bdf8;
+        .executive-summary {
+            background: #f8f9fa;
+            border-left: 5px solid #0066cc;
+            padding: 30px;
+            margin-bottom: 0;
+        }
+
+        .summary-title {
+            font-size: 1.4em;
+            color: #003366;
             margin-bottom: 20px;
             font-weight: 600;
         }
 
-        .main-doc-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-            color: white;
-            text-decoration: none;
-            padding: 20px 40px;
-            border-radius: 12px;
-            font-size: 1.2em;
-            font-weight: 600;
-            margin: 20px 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        .summary-text {
+            font-size: 1.05em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: justify;
         }
 
-        .main-doc-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
-            background: linear-gradient(135deg, #1d4ed8, #1e40af);
+        .crisis-context {
+            background: #fff5f5;
+            border-left: 5px solid #dc3545;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .document-access {
+            padding: 40px;
+            background: white;
+        }
+
+        .access-title {
+            font-size: 1.3em;
+            color: #003366;
+            margin-bottom: 25px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .document-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .document-card {
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .document-card:hover {
+            border-color: #0066cc;
+            box-shadow: 0 4px 12px rgba(0,102,204,0.15);
+        }
+
+        .doc-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #0066cc;
+        }
+
+        .doc-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        .doc-description {
+            color: #6c757d;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .doc-button {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .doc-button:hover {
+            background: #004499;
+            text-decoration: none;
+            color: white;
         }
 
         .secondary-button {
-            display: inline-block;
-            background: rgba(34, 197, 94, 0.2);
-            border: 2px solid #22c55e;
-            color: #22c55e;
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-size: 1em;
-            font-weight: 500;
-            margin: 10px;
-            transition: all 0.3s ease;
+            background: #6c757d;
         }
 
         .secondary-button:hover {
-            background: rgba(34, 197, 94, 0.3);
-            transform: translateY(-2px);
+            background: #545b62;
+        }
+
+        .metrics-section {
+            background: #f8f9fa;
+            padding: 40px;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .metrics-title {
+            text-align: center;
+            color: #003366;
+            margin-bottom: 30px;
+            font-size: 1.3em;
+            font-weight: 600;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
+            gap: 25px;
+            margin: 30px 0;
         }
 
         .stat-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
             padding: 25px;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .stat-number {
-            font-size: 2.5em;
+            font-size: 2.2em;
             font-weight: 700;
-            color: #fbbf24;
-            margin-bottom: 10px;
+            color: #0066cc;
+            margin-bottom: 8px;
         }
 
         .stat-label {
-            color: #e2e8f0;
+            color: #6c757d;
             font-size: 0.9em;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            font-weight: 500;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
+        .collaboration-section {
+            background: white;
+            padding: 40px;
+            border-top: 1px solid #dee2e6;
         }
 
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 4px solid var(--accent-color);
-            border-radius: 8px;
-            padding: 20px;
-            text-align: left;
-        }
-
-        .feature-card.capacity { --accent-color: #3b82f6; }
-        .feature-card.coverage { --accent-color: #22c55e; }
-        .feature-card.security { --accent-color: #f59e0b; }
-
-        .feature-icon {
-            font-size: 2.5em;
-            margin-bottom: 15px;
-            color: var(--accent-color);
-        }
-
-        .feature-title {
-            color: var(--accent-color);
-            font-size: 1.1em;
+        .collaboration-title {
+            text-align: center;
+            color: #003366;
+            margin-bottom: 20px;
+            font-size: 1.3em;
             font-weight: 600;
-            margin-bottom: 10px;
         }
 
-        .feature-description {
-            color: #cbd5e1;
+        .collaboration-text {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 1.05em;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .github-cta {
+            text-align: center;
+            background: #f8f9fa;
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .github-cta-title {
+            color: #28a745;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .github-cta-text {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .contribute-button {
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 4px;
+            font-weight: 500;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .contribute-button:hover {
+            background: #218838;
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer {
+            background: #003366;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .footer-content {
             font-size: 0.9em;
-            line-height: 1.4;
+            opacity: 0.9;
         }
 
-        .footer-note {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #64748b;
-            font-size: 0.9em;
-        }
-
-        .github-link {
-            color: #38bdf8;
+        .footer-link {
+            color: #66b3ff;
             text-decoration: none;
         }
 
-        .github-link:hover {
+        .footer-link:hover {
             text-decoration: underline;
+            color: #99ccff;
         }
 
         @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
             .main-title {
-                font-size: 2.2em;
+                font-size: 1.8em;
+                margin-top: 15px;
             }
             
             .container {
-                padding: 20px 15px;
+                padding: 0 15px;
             }
             
-            .document-access {
-                padding: 25px;
+            .document-access, .metrics-section, .collaboration-section {
+                padding: 25px 20px;
             }
         }
     </style>
 </head>
 <body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="un-logo">WFP/UN</div>
+                    <div>
+                        <h1 class="main-title">Marco Polo UN Pier Initiative</h1>
+                        <p class="subtitle">Maritime Humanitarian Corridor for Gaza</p>
+                    </div>
+                </div>
+                <div class="institutional-note">
+                    <div>WFP/Government of Italy Liaison</div>
+                    <div>Technical Documentation Portal</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <div class="container">
-        <div class="logo-section">
-            <h1 class="main-title">Marco Polo UN Pier</h1>
-            <p class="subtitle">Humanitarian Maritime Corridor Documentation<br>
-            <em>Comprehensive Technical & Operational Framework</em></p>
+        <div class="main-content">
+            <div class="executive-summary">
+                <h2 class="summary-title">Executive Summary</h2>
+                <p class="summary-text">
+                    The Marco Polo UN Pier Initiative represents a comprehensive maritime solution to overcome critical access constraints preventing adequate humanitarian aid delivery to Gaza's 2.1 million residents. This technical documentation presents a detailed operational framework for establishing a high-capacity offshore pier system capable of delivering 3,000+ metric tons of aid daily.
+                </p>
+                <div class="crisis-context">
+                    <strong>Critical Context:</strong> Current delivery mechanisms reach less than 10% of documented humanitarian need (62,000 MT/month required vs. 1,300 MT/month delivered). This documentation provides a technically viable, politically neutral pathway to circumvent bureaucratic impediments that have resulted in systematic aid denial.
+                </div>
+                <p class="summary-text">
+                    This open-source technical framework invites collaboration from international maritime experts, humanitarian practitioners, and policy specialists to refine and implement life-saving infrastructure solutions that transcend political barriers to humanitarian access.
+                </p>
+            </div>
+
+            <div class="document-access">
+                <h2 class="access-title">Technical Documentation Access</h2>
+                
+                <div class="document-grid">
+                    <div class="document-card">
+                        <div class="doc-icon">📋</div>
+                        <h3 class="doc-title">Complete Technical Framework</h3>
+                        <p class="doc-description">
+                            100+ page comprehensive operational specification including vessel requirements, pier design, capacity scaling, risk assessment, and implementation timeline.
+                        </p>
+                        <a href="Marco Polo UN Pier.html" class="doc-button">Access Full Document</a>
+                    </div>
+                    
+                    <div class="document-card">
+                        <div class="doc-icon">⚖️</div>
+                        <h3 class="doc-title">Memorandum of Understanding</h3>
+                        <p class="doc-description">
+                            Legal framework and institutional agreements template for international cooperation and operational authorization.
+                        </p>
+                        <a href="Marco Polo UNPier MoU Preprint v0.1.html" class="doc-button secondary-button">View MoU Framework</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="document-access">
-            <h2 class="access-title">📋 Access Main Documentation</h2>
-            <p style="color: #e2e8f0; margin-bottom: 30px;">
-                Complete 100+ page technical justification and operational framework for Gaza humanitarian aid delivery
+        <div class="metrics-section">
+            <h2 class="metrics-title">Operational Specifications</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">3,000</div>
+                    <div class="stat-label">Metric Tons/Day Capacity</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">90,000</div>
+                    <div class="stat-label">Monthly Throughput (MT)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">48</div>
+                    <div class="stat-label">Hours Deployment Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2.1M</div>
+                    <div class="stat-label">People Served</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="collaboration-section">
+            <h2 class="collaboration-title">Open Collaboration Framework</h2>
+            <p class="collaboration-text">
+                This technical framework is developed as an open-source initiative to accelerate humanitarian response implementation. We invite maritime engineers, humanitarian logistics specialists, international legal experts, and policy practitioners to contribute to refining these operational specifications.
             </p>
             
-            <a href="Marco Polo UN Pier.html" class="main-doc-button">
-                🚢 Open Main Document
-            </a>
-            
-            <div style="margin-top: 30px;">
-                <a href="Marco Polo UNPier MoU Preprint v0.1.html" class="secondary-button">
-                    📄 MoU Preprint
-                </a>
-                <a href="https://github.com/DomnSpace/Marco-Polo-UNPier-Humanitarian-Corridor" class="secondary-button">
-                    🔗 GitHub Repository
+            <div class="github-cta">
+                <h3 class="github-cta-title">🤝 Contribute to Life-Saving Infrastructure</h3>
+                <p class="github-cta-text">
+                    Join our collaborative effort to identify implementation pathways, refine technical specifications, and develop practical solutions that can save lives by overcoming bureaucratic barriers to humanitarian access.
+                </p>
+                <a href="https://github.com/DomnSpace/Marco-Polo-UNPier-Humanitarian-Corridor" class="contribute-button">
+                    View on GitHub & Contribute
                 </a>
             </div>
-        </div>
-
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">3,000</div>
-                <div class="stat-label">MT/Day Capacity</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">2.1M</div>
-                <div class="stat-label">People Served</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">100+</div>
-                <div class="stat-label">Pages Documentation</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">48h</div>
-                <div class="stat-label">Deployment Time</div>
-            </div>
-        </div>
-
-        <div class="features-grid">
-            <div class="feature-card capacity">
-                <div class="feature-icon">⚡</div>
-                <div class="feature-title">High-Capacity Operations</div>
-                <div class="feature-description">
-                    Scalable from 1,500 to 6,000 MT/day using modular pier systems and self-unloading vessels
-                </div>
-            </div>
-            
-            <div class="feature-card coverage">
-                <div class="feature-icon">🌍</div>
-                <div class="feature-title">Comprehensive Coverage</div>
-                <div class="feature-description">
-                    Complete operational framework covering vessels, infrastructure, security, and risk management
-                </div>
-            </div>
-            
-            <div class="feature-card security">
-                <div class="feature-icon">🛡️</div>
-                <div class="feature-title">Security Integration</div>
-                <div class="feature-description">
-                    Compatible with Combined Maritime Forces framework and multinational security protocols
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-note">
-            <p><strong>Status:</strong> Ready for UN and government presentation | <strong>Last Updated:</strong> August 2025</p>
-            <p>Repository: <a href="https://github.com/DomnSpace/Marco-Polo-UNPier-Humanitarian-Corridor" class="github-link">DomnSpace/Marco-Polo-UNPier-Humanitarian-Corridor</a></p>
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p><strong>Status:</strong> Technical framework ready for institutional review and implementation</p>
+                <p><strong>Last Updated:</strong> August 2025 | <strong>Version:</strong> 1.0</p>
+                <p>Repository: <a href="https://github.com/DomnSpace/Marco-Polo-UNPier-Humanitarian-Corridor" class="footer-link">DomnSpace/Marco-Polo-UNPier-Humanitarian-Corridor</a></p>
+                <p style="margin-top: 15px; font-style: italic;">
+                    "When bureaucracy becomes complicit in suffering, technical innovation must provide alternative pathways to human dignity."
+                </p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Auto-redirect option (commented out by default)
